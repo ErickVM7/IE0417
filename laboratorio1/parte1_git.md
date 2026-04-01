@@ -12,7 +12,7 @@ I-2026
 En este laboratorio se utilizaron de manera práctica los comandos fundamentales del sistema de control de versiones **Git**, mediante la plataforma interactiva **Learn Git Branching**.El objetivo fue comprender cómo Git maneja el historial, las ramas, los merges y las operaciones avanzadas como *rebase*, *reset* y *cherry-pick*, aplicadas en escenarios simulados. Estos escenarios se hacen de manera interactiva y visualmente intutivas para observar como funciona el git.
 
 
-`![Main 1](./imagenes/intro.png)` 
+![Main 1](./imagenes/intro.png)
 
 
 ---
@@ -21,9 +21,9 @@ En este laboratorio se utilizaron de manera práctica los comandos fundamentales
 
 Se realizaron todos los niveles de la página. En un inicio no se logró realizar la solución más optima, por lo que después se repitió los niveles para lograrlo.
 
-`![Main 1](./imagenes/All1.png)` 
+![Main 1](./imagenes/All1.png)
 
-`![Main 1](./imagenes/All2.png)` 
+![Main 1](./imagenes/All2.png) 
 
 ## 2.1. Sección Main
 
@@ -36,11 +36,11 @@ Incluye:
 - Reset / Revert  
 - Estado *detached HEAD*
 
-`![Main 1](./imagenes/1-1.png)`
-`![Main 1](./imagenes/1-2.png)`
-`![Main 1](./imagenes/1-3.png)`
-`![Main 1](./imagenes/1-4.png)`
-`![Main 1](./imagenes/1-5.png)`
+![Main 1](./imagenes/1-1.png)
+![Main 1](./imagenes/1-2.png)
+![Main 1](./imagenes/1-3.png)
+![Main 1](./imagenes/1-4.png)
+![Main 1](./imagenes/1-5.png)
  
 
 ---
@@ -55,41 +55,41 @@ Incluye:
 - manejo de origin  
 - operaciones avanzadas con repos remotos
 
-`![Main 1](./imagenes/2-1.png)`
+![Main 1](./imagenes/2-1.png)
 
 ---
 
 # 3. Conceptos aprendidos
 
-### ✔ Commit
+### Commit
 Un commit representa un punto en la historia del proyecto.  
 Aprendí a crear commits, moverme entre ellos con `checkout` y usarlos como referencia para otras operaciones.
 
-### ✔ Branch
+### Branch
 Las ramas permiten desarrollar nuevas funcionalidades sin afectar la rama principal.  
 Aprendí a crear ramas, cambiar entre ellas y visualizar cómo divergen.
 
-### ✔ Merge
+### Merge
 Fusiona el trabajo de dos ramas. Aprendí la diferencia entre:
 - *Fast-forward*
 - *Merge con commit de fusión*
 
-### ✔ Rebase
+### Rebase
 Reescribe la historia colocando commits encima de otra rama.  
 Es útil para mantener una historia limpia y lineal.
 
-### ✔ Cherry-pick
+### Cherry-pick
 Permite traer commits específicos desde otra rama sin fusionar toda la rama completa.
 
-### ✔ Reset / Revert
+### Reset / Revert
 - **Reset:** mueve el puntero de la rama hacia un commit anterior (reescribe la historia).  
 - **Revert:** crea un commit nuevo que deshace cambios pasados (seguro para repos compartidos).
 
-### ✔ HEAD y Detached HEAD
+### HEAD y Detached HEAD
 - **HEAD** apunta a la rama activa.  
 - El estado *detached HEAD* ocurre cuando se trabaja directamente sobre un commit y no sobre una rama.
 
-### ✔ Manejo de remotos
+### Manejo de remotos
 Aprendí a clonar repositorios, añadir remotos, subir cambios (`push`) y descargar cambios (`pull`).  
 También comprendí la relación entre ramas locales y remotas (upstream tracking).
 
