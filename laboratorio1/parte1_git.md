@@ -5,6 +5,8 @@ Erick Vargas Monge C08215
 Profesor: Rafael Esteban Badilla Alvarado  
 I-2026  
 
+
+## Parte 1. Sistemas de control de versiones
 ---
 
 # 1. Introducción
