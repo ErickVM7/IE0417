@@ -8,7 +8,8 @@ El repositorio está organizado en carpetas, donde cada una corresponde a un lab
 
 * `laboratorio1/` → Control de versiones (Git) y documentación de software
 * `tarea2/` → Análisis de requerimientos y modelado de casos de uso
-* `laboratorio3/` → (por agregar)
+* `laboratorio2/` → Contenedores
+*  `laboratorio3/` →  Programación Paralela-Concurrente
 
 
 ---
