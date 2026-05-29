@@ -1,0 +1,2 @@
+/usr/bin/ar qc libproject_lib.a CMakeFiles/project_lib.dir/src/calculator.cpp.o CMakeFiles/project_lib.dir/src/string_utils.cpp.o CMakeFiles/project_lib.dir/src/grade_utils.cpp.o
+/usr/bin/ranlib libproject_lib.a

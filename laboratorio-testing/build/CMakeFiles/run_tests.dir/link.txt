@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage CMakeFiles/run_tests.dir/tests/test_calculator.cpp.o CMakeFiles/run_tests.dir/tests/test_string_utils.cpp.o CMakeFiles/run_tests.dir/tests/test_grade_utils.cpp.o -o run_tests  libproject_lib.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a 
