@@ -22,6 +22,7 @@ bool is_passing(int grade) {
 
 bool is_valid_grade(int grade) {
     return grade >= 0 && grade <= 100;
+}
 
 char letter_grade(int grade) {
     if (grade < 0 || grade > 100) {
