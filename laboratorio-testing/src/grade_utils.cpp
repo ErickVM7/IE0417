@@ -20,6 +20,9 @@ bool is_passing(int grade) {
     return grade >= 70;
 }
 
+bool is_valid_grade(int grade) {
+    return grade >= 0 && grade <= 100;
+
 char letter_grade(int grade) {
     if (grade < 0 || grade > 100) {
         throw std::invalid_argument("La nota debe estar entre 0 y 100");

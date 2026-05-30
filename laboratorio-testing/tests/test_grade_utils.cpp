@@ -53,6 +53,30 @@ TEST(GradeUtilsTest, MaximumValidGrade) {
     EXPECT_EQ(letter_grade(100), 'A');
 }
 
+
+TEST(GradeUtilsTest, ValidGradeNormalValue) {
+    EXPECT_TRUE(is_valid_grade(85));
+}
+
+TEST(GradeUtilsTest, InvalidGradeNormalValue) {
+    EXPECT_FALSE(is_valid_grade(120));
+}
+
+TEST(GradeUtilsTest, ValidGradeLowerBoundary) {
+    EXPECT_TRUE(is_valid_grade(0));
+}
+
+TEST(GradeUtilsTest, ValidGradeUpperBoundary) {
+    EXPECT_TRUE(is_valid_grade(100));
+}
+
+TEST(GradeUtilsTest, InvalidGradeBelowLowerBoundary) {
+    EXPECT_FALSE(is_valid_grade(-1));
+}
+
+TEST(GradeUtilsTest, InvalidGradeAboveUpperBoundary) {
+    EXPECT_FALSE(is_valid_grade(101));
+}
 TEST(GradeUtilsTest, NegativeGradeThrowsException) {
     EXPECT_THROW(letter_grade(-1), std::invalid_argument);
 }

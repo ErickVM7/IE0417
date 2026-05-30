@@ -22,11 +22,12 @@ jobs:
       - name: Configure CMake
         run: |
           cd laboratorio-testing
-          mkdir -p build
+          rm -rf build
+          mkdir build
           cd build
           cmake ..
 
-      - name: Build
+      - name: Build project
         run: |
           cd laboratorio-testing/build
           make
@@ -35,3 +36,8 @@ jobs:
         run: |
           cd laboratorio-testing/build
           ./run_tests
+
+      - name: Run CTest
+        run: |
+          cd laboratorio-testing/build
+          ctest --output-on-failure
