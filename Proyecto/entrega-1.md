@@ -129,77 +129,7 @@ flowchart TB
 | Infraestructura | Docker Compose con MariaDB, nginx y aplicación Django/Gunicorn. | `docker-compose.yml:6`, `docker-compose.yml:31`, `docker-compose.yml:48` |
 
 
-### 4.1 Diagrama de contexto
 
-```mermaid
-flowchart LR
-    U1[Visitantes públicos] --> N[Nginx]
-    U2[Estudiantes] --> N
-    U3[Profesores] --> N
-    U4[Administrativos] --> N
-
-    N --> A[EIEInfo<br/>Aplicación Django]
-    A --> DB[(MariaDB / MySQL)]
-    A --> FS[(Archivos media / static)]
-    A --> SMTP[Servidor SMTP]
-    A --> CI[Pipeline Drone CI/CD]
-
-    CI --> A
-```
-
-### 4.2 Diagrama de módulos y contenedores
-
-```mermaid
-flowchart TB
-    subgraph Infraestructura_Docker["Infraestructura Docker"]
-        N[Nginx<br/>docker-compose.yml:31]
-        APP[EIEInfo App<br/>Django + Gunicorn<br/>docker-compose.yml:48,67]
-        DB[(MariaDB<br/>docker-compose.yml:6)]
-        VOL1[(static_volume)]
-        VOL2[(media_volume)]
-    end
-
-    subgraph Proyecto_Django["Proyecto Django"]
-        URLS[eieinfo/urls.py<br/>Ruteo principal]
-        WEB[webpage]
-        EST[estudiantes]
-        PROF[profesores]
-        ADM[administrativos]
-        CUR[cursos]
-        INV[inventario]
-        FD[firma_digital]
-        POST[postulaciones]
-        TFG[trabajo_final_de_graduacion]
-    end
-
-    N --> APP
-    APP --> DB
-    APP --> VOL1
-    APP --> VOL2
-    APP --> URLS
-
-    URLS --> WEB
-    URLS --> EST
-    URLS --> PROF
-    URLS --> ADM
-    URLS --> CUR
-    URLS --> INV
-    URLS --> FD
-    URLS --> POST
-    URLS --> TFG
-```
-
-### 4.3 Componentes principales
-
-| Capa | Componentes | Evidencia |
-|---|---|---|
-| Entrada HTTP | Archivo raíz de rutas `eieinfo/urls.py`. | `src/server/eieinfo/urls.py:23` |
-| Portal público | `webpage`, `anuncios`, `eventos`, `proyectos`, `laboratorios`, `cursos`. | `src/server/eieinfo/urls.py:37-47`, `src/server/eieinfo/urls.py:62` |
-| Usuarios estudiantes | Módulo `estudiantes` con subrutas para home, cursos, asistencias, trámites, bodega y práctica profesional. | `src/server/estudiantes/urls.py:10-45` |
-| Usuarios profesores | Módulo `profesores` con subrutas por áreas funcionales. | `src/server/profesores/urlpatterns/cursos.py:8`, `src/server/profesores/urlpatterns/consejo_asesor.py:8` |
-| Administración académica | `administrativos`, `cursos`, `proyectos`, `laboratorios`, `trabajo_final_de_graduacion`. | `src/server/eieinfo/urls.py:33`, `src/server/eieinfo/urls.py:47`, `src/server/eieinfo/urls.py:68` |
-| Persistencia | Modelos Django distribuidos por app. | `src/server/estudiantes/models.py:109`, `src/server/trabajo_final_de_graduacion/models.py:124` |
-| Infraestructura | Docker Compose con MariaDB, nginx y aplicación Django/Gunicorn. | `docker-compose.yml:6`, `docker-compose.yml:31`, `docker-compose.yml:48` |
 
 
 ## 5. Inventario funcional
