@@ -74,7 +74,7 @@ flowchart LR
     A --> CI[Pipeline Drone CI/CD]
 
     CI --> A
-````
+```
 
 ### 4.2 Diagrama de módulos y contenedores
 
