@@ -62,16 +62,16 @@ El sistema se organiza como una aplicación web Django con múltiples apps inter
 
 ```mermaid
 flowchart LR
-    U1[Visitantes públicos] --> N[Nginx]
-    U2[Estudiantes] --> N
-    U3[Profesores] --> N
-    U4[Administrativos] --> N
+    U1["Visitantes públicos"] --> N["Nginx"]
+    U2["Estudiantes"] --> N
+    U3["Profesores"] --> N
+    U4["Administrativos"] --> N
 
-    N --> A[EIEInfo<br/>Aplicación Django]
-    A --> DB[(MariaDB / MySQL)]
-    A --> FS[(Archivos media / static)]
-    A --> SMTP[Servidor SMTP<br/>smtp.eie.ucr.ac.cr]
-    A --> CI[Pipeline Drone CI/CD]
+    N --> A["EIEInfo<br/>Aplicación Django"]
+    A --> DB[("MariaDB / MySQL")]
+    A --> FS[("Archivos media / static")]
+    A --> SMTP["Servidor SMTP<br/>smtp.eie.ucr.ac.cr"]
+    A --> CI["Pipeline Drone CI/CD"]
 
     CI --> A
 ```
@@ -81,26 +81,26 @@ flowchart LR
 ```mermaid
 flowchart TB
     subgraph Infraestructura_Docker["Infraestructura Docker"]
-        N[Nginx<br/>docker-compose.yml:31]
-        APP[EIEInfo App<br/>Django + Gunicorn<br/>docker-compose.yml:48,67]
-        DB[(MariaDB<br/>docker-compose.yml:6)]
-        VOL1[(static_volume)]
-        VOL2[(media_volume)]
+        N["Nginx<br/>docker-compose.yml:31"]
+        APP["EIEInfo App<br/>Django + Gunicorn<br/>docker-compose.yml:48,67"]
+        DB[("MariaDB<br/>docker-compose.yml:6")]
+        VOL1[("static_volume")]
+        VOL2[("media_volume")]
     end
 
     subgraph Proyecto_Django["Proyecto Django: 23 Apps"]
-        URLS[eieinfo/urls.py<br/>Ruteo principal]
-        WEB[webpage]
-        EST[estudiantes]
-        PROF[profesores]
-        ADM[administrativos]
-        CUR[cursos]
-        INV[inventario]
-        FD[firma_digital]
-        POST[postulaciones]
-        TFG[trabajo_final_de_graduacion]
-        LAB[laboratorios]
-        PRY[proyectos]
+        URLS["eieinfo/urls.py<br/>Ruteo principal"]
+        WEB["webpage"]
+        EST["estudiantes"]
+        PROF["profesores"]
+        ADM["administrativos"]
+        CUR["cursos"]
+        INV["inventario"]
+        FD["firma_digital"]
+        POST["postulaciones"]
+        TFG["trabajo_final_de_graduacion"]
+        LAB["laboratorios"]
+        PRY["proyectos"]
         OTROS["+ 11 apps más"]
     end
 
