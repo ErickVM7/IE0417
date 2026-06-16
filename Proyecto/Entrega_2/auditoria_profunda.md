@@ -12,11 +12,7 @@
 
 ## 1. Alcance y tesis de auditoría
 
-Esta segunda entrega profundiza el diagnóstico inicial de la Entrega 1 mediante una auditoría estática del repositorio. El análisis se realiza sin ejecutar el sistema ni las pruebas, por lo que las conclusiones se basan en evidencia observable directamente en archivos del proyecto.
-
-La tesis principal de esta auditoría es que EIEInfo presenta varios problemas relacionados entre sí: alto acoplamiento entre apps, lógica de negocio distribuida en vistas, formularios y modelos, pruebas parciales, configuración operativa frágil y riesgos de seguridad observables. Estos elementos hacen que los cambios futuros sean más costosos, más difíciles de probar y más riesgosos de operar.
-
-En esta entrega no solo se listan hallazgos, sino que se busca explicar por qué importan, qué atributos de calidad afectan y cómo se relacionan entre sí.
+Esta segunda entrega profundiza el diagnóstico inicial de la Entrega 1 mediante una auditoría estática del repositorio. El análisis se realiza sin ejecutar el sistema ni las pruebas, por lo que las conclusiones se basan en evidencia observable directamente en archivos del proyecto. La tesis principal de esta auditoría es que EIEInfo presenta varios problemas relacionados entre sí: alto acoplamiento entre apps, lógica de negocio distribuida en vistas, formularios y modelos, pruebas parciales, configuración operativa frágil y riesgos de seguridad observables. Estos elementos hacen que los cambios futuros sean más costosos, más difíciles de probar y más riesgosos de operar. En esta entrega no solo se listan hallazgos, sino que se busca explicar por qué importan, qué atributos de calidad afectan y cómo se relacionan entre sí.
 
 ---
 
@@ -24,25 +20,13 @@ En esta entrega no solo se listan hallazgos, sino que se busca explicar por qué
 
 ## 2. Metodología
 
-La auditoría se realizó mediante inspección estática del repositorio. No se ejecutó el sistema ni la suite de pruebas; por lo tanto, los hallazgos se basan en evidencia observable en archivos, rutas, modelos, vistas, formularios, configuración, scripts, Docker y CI/CD.
-
-El análisis se construyó de forma incremental a partir de la Entrega 1. Primero se validaron las evidencias principales y luego se profundizó por secciones: atributos de calidad, auditoría modular, dominio, calidad del código, pruebas, seguridad, operación y hallazgos consolidados.
-
-Para evitar sobreafirmaciones, esta versión aplica las siguientes correcciones metodológicas:
-
-- Se evita usar una cifra anterior incorrecta de apps registradas.
-- Se indica que hay 47 entradas totales en `INSTALLED_APPS`, de las cuales 17 son apps propias registradas.
-- Se indica que el CI cubre 7 de esas 17 apps propias registradas.
-- No se reproducen valores reales de secretos.
-- En acciones destructivas sin `require_POST`, se usa `atributos` como evidencia principal.
-- En observabilidad, se afirma únicamente que hay observabilidad básica/local y que no se evidencia métricas, health checks o tracing desde el repositorio.
-- En seguridad por hostname, se plantea como riesgo si se despliega con hostname distinto, no como afirmación de que producción actual esté necesariamente en modo debug.
+La auditoría se realizó mediante inspección estática del repositorio. No se ejecutó el sistema ni la suite de pruebas; por lo tanto, los hallazgos se basan en evidencia observable en archivos, rutas, modelos, vistas, formularios, configuración, scripts, Docker y CI/CD. El análisis se construyó de forma incremental a partir de la Entrega 1. Primero se validaron las evidencias principales y luego se profundizó por secciones: atributos de calidad, auditoría modular, dominio, calidad del código, pruebas, seguridad, operación y hallazgos consolidados.
 
 ---
 
 ## 3. Evaluación por atributos de calidad
 
-La evaluación se basa en evidencia validada del repositorio. Se corrige la escala real del sistema: `INSTALLED_APPS` contiene 47 entradas, de las cuales 17 corresponden a apps propias registradas (`src/server/eieinfo/settings.py:44-93`, especialmente `:56-73`). El CI ejecuta cobertura sobre 7 de esas 17 apps propias (`.drone.yml:263-274`).
+La evaluación se basa en evidencia validada del repositorio. La escala real del sistema: `INSTALLED_APPS` contiene 47 entradas, de las cuales 17 corresponden a apps propias registradas (`src/server/eieinfo/settings.py:44-93`, especialmente `:56-73`). El CI ejecuta cobertura sobre 7 de esas 17 apps propias (`.drone.yml:263-274`).
 
 ### 3.1 Mantenibilidad
 
