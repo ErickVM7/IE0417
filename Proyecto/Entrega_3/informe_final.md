@@ -327,6 +327,7 @@ No se propone reescribir EIEInfo desde cero. Tampoco se propone dividirlo automÃ
 
 ### 7.8 Diagrama de arquitectura objetivo
 
+```mermaid
 flowchart TD
     U[Usuarios institucionales] --> N[Nginx]
     N --> G[Gunicorn]
