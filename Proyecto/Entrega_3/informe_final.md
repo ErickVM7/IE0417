@@ -222,7 +222,7 @@ flowchart TD
     DOCKER --> DB
 
     D --> EXT[Servicios externos: correo, firma, wiki, recaptcha y APIs]
-
+```
 
 ### 6.10 Fortalezas de la arquitectura actual
 
